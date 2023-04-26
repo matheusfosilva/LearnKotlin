@@ -1,6 +1,6 @@
 fun main(args: Array<String>) {
 
-    val contaDoMatheus = Conta("Matheus",  4111)
+    val contaDoMatheus = Conta(numero = 1045, titular = "Matheus Ferrira de Oliveira silva")
     val contaDaClara = Conta("Clara",  4112)
 
     contaDoMatheus.deposito(250.0)
@@ -21,16 +21,11 @@ fun main(args: Array<String>) {
 
 }
 
-class Conta(titular: String,  var conta: Int) {
+class Conta(val titular: String,  val numero: Int) {
 
-    var titular: String
-        private set
     var saldo = 0.0
         private set
 
-    init{
-        this.titular = titular
-    }
 
     fun deposito(valor: Double) {
         this.saldo += valor
